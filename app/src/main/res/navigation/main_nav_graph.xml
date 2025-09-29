@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 main_nav_graph.xml
+
+This navigation graph defines the main entry points of the application:
+- Login and Signup fragments (authentication flow)
+- Home fragment and its sub-fragments (Faculty, Student, and Add fragments)
+
+Fragments and their actions:
+1. LoginFragment → navigate to SignupFragment or HomeFragment.
+2. SignupFragment → navigate back to LoginFragment.
+3. HomeFragment → navigate to AddFacultyFragment.
+4. FacultyFragment → navigate to AddFacultyFragment.
+5. StudentFragment → navigate to AddStudentFragment.
+-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph">
+
+    <!-- 🔹 Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.studenthub.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+        <!-- Navigate to SignupFragment -->
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@+id/signupFragment"/>
+
+        <!-- Navigate to HomeFragment -->
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"/>
+    </fragment>
+
+    <!-- 🔹 Signup Fragment -->
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.studenthub.ui.auth.SignupFragment"
+        android:label="Signup"
+        tools:layout="@layout/fragment_signup">
+
+        <!-- Navigate back to LoginFragment -->
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+
+    </fragment>
+
+    <!-- 🔹 Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.studenthub.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Navigate to AddFacultyFragment -->
+        <action
+            android:id="@+id/action_homeFragment_to_addFacultyFragment"
+            app:destination="@+id/addFacultyFragment"/>
+    </fragment>
+
+<!--     🔹 Add Faculty Fragment -->
+    <fragment
+        android:id="@+id/addFacultyFragment"
+        android:name="com.example.studenthub.ui.main.faculty.addfaculty.AddFacultyFragment"
+        android:label="Add Faculty"
+        tools:layout="@layout/fragment_add_faculty"/>
+
+    <!-- 🔹 Add Student Fragment -->
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.studenthub.ui.main.student.addstudent.AddStudentFragment"
+        android:label="Add Student"
+        tools:layout="@layout/fragment_add_student"/>
+
+
+</navigation>

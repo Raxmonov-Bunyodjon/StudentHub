@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 activity_home.xml
+
+This layout file represents the main UI for the Home screen.
+Each UI element is fully connected with its functionality:
+- Toolbar → displays the title and logout button
+- FragmentContainerView → holds the fragments (NavHost)
+- BottomNavigationView → bottom navigation menu
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 🔹 Toolbar section -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background= "@color/primaryColor"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingTop="22dp"
+        android:orientation="horizontal">
+
+        <!-- 🔹 App title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"/>
+
+        <!-- 🔹 Logout button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logout"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="15dp"
+            app:srcCompat="@drawable/outline_logout_24"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- 🔹 FragmentContainerView: used to host child fragments -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/home_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:navGraph="@navigation/home_nav_graph"
+        app:defaultNavHost="false"/>
+
+    <!-- 🔹 BottomNavigationView: provides navigation between main sections of the app -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:elevation="8dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

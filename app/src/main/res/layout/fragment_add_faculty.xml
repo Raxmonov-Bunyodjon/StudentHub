@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 fragment_add_faculty.xml
+
+This layout file represents the "Add Faculty" screen.
+Each UI element is fully connected to the fragment's functionality:
+- TextView → Displays the label for the faculty name
+- EditText → Used to input the faculty name
+- Button → Used to save the faculty information
+-->
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Registration"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="12dp"/>
+
+    <!-- 🔹 Faculty name label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faculty name"
+        android:layout_marginTop="30dp"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 🔹 EditText to input the faculty name -->
+    <!-- Last Name input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:hint="Faculty name"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFacultyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 Save button -->
+    <Button
+        android:id="@+id/btnSaveFaculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Save"
+        android:layout_marginTop="14dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+🔹 item_faculty.xml
+
+This layout file is used for a single item (card) in the list of faculties.
+UI elements are connected to display the faculty name and edit/delete actions.
+
+Elements:
+1. CardView → visual card container with shadow and corner radius.
+2. LinearLayout → horizontal layout for internal elements.
+3. TextView → displays the faculty name.
+4. ImageButton → Edit button for editing the faculty.
+5. ImageButton → Delete button for removing the faculty.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:boxBackgroundMode="outline"
+    app:boxStrokeColor="@color/text_input_stroke"
+    app:boxStrokeWidth="2dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:ignore="NamespaceTypo"
+    app:shapeAppearanceOverlay="@style/RoundedCornerTextField"
+    app:strokeColor="@color/colorPrimary">
+
+
+    <!-- 🔹 Inner horizontal container -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- 🔹 Faculty name -->
+        <TextView
+            android:id="@+id/tvFacultyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Faculty Name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- 🔹 Edit button -->
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Edit"
+            android:src="@drawable/outline_edit_24"
+            card_view:tint="@color/black" />
+
+        <!-- 🔹 Delete button -->
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete"
+            android:src="@drawable/outline_delete_24"
+            card_view:tint="@color/red" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</com.google.android.material.card.MaterialCardView>

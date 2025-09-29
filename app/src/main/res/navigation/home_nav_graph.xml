@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 home_nav_graph.xml
+
+This navigation graph manages navigation between fragments inside the Home screen.
+It is integrated with BottomNavigationView.
+
+Fragments:
+1. FacultyFragment → displays the list of faculties.
+2. StudentFragment → displays the list of students.
+3. ProfileFragment → displays the user profile.
+
+StartDestination:
+- app:startDestination="@id/facultyFragment" → opens FacultyFragment as the initial screen.
+-->
+
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/facultyFragment">
+
+    <!-- 🔹 Faculty Fragment -->
+    <fragment
+        android:id="@+id/facultyFragment"
+        android:name="com.example.studenthub.ui.main.faculty.FacultyFragment"
+        tools:layout="@layout/fragment_faculty"
+        android:label="Fakultetlar"/>
+
+    <!-- 🔹 Student fragment -->
+    <fragment
+        android:id="@+id/studentFragmet"
+        android:name="com.example.studenthub.ui.main.student.StudentFragment"
+        tools:layout="@layout/fragment_student"
+        android:label="Students"/>
+
+    <!-- 🔹 Profile fragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.studenthub.ui.main.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="Profile"/>
+</navigation>

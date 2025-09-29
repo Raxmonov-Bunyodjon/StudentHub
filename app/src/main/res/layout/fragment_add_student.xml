@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 fragment_add_student.xml
+
+This layout file represents the "Add Student" screen.
+Each UI element is fully connected with the fragment's functionality.
+-->
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Registration"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="12dp"/>
+
+    <!-- EditText for entering student's first name -->
+    <!-- 🔹 Material Design search bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:boxBackgroundMode="outline"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- EditText for entering student's last name -->
+    <!-- 🔹 Material Design search bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Label for selecting faculty -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:text="Faculty selection"
+        android:textStyle="bold"
+        android:paddingTop="12dp"/>
+
+    <!-- Spinner (dropdown) for selecting faculty -->
+    <Spinner
+        android:id="@+id/spinnerFaculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="5dp"/>
+
+    <!-- EditText for entering student's study direction -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFacultyDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Direction"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Button to save student information -->
+    <Button
+        android:id="@+id/btnSaveStudent"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Save"
+        android:layout_marginTop="20dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

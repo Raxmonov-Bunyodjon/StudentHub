@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 bottom_sheet_message.xml
+
+This layout file is used for a simple Bottom Sheet dialog that shows
+a message to the user. The user can read the message and close the sheet
+by pressing the "OK" button.
+
+Elements:
+1. LinearLayout → arranges all elements vertically with padding.
+2. TextView → displays the message text.
+3. Button → allows the user to close the Bottom Sheet after reading the message.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <!-- 🔹 Message text -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Something went wrong"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="8dp"/>
+
+    <!-- 🔹 OK button to close the Bottom Sheet -->
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="OK"
+        android:backgroundTint="@color/teal_200"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

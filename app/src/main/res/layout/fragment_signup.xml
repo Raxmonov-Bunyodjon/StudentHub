@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+🔹 fragment_signup.xml
+
+This layout file defines the "Signup" screen.
+Each UI element is connected to the signup process where the user inputs their information.
+
+Elements:
+1. Avatar → displays the user profile picture
+2. ProgressBar → shows loading process
+3. TextInputLayout + EditText → fields for First Name, Last Name, Username, and Password
+4. Signup Button → triggers the signup function
+5. Login Link → navigates to login screen if the user already has an account
+-->
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <!-- Avatar image -->
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_circle"
+        android:scaleType="centerCrop"
+        android:src="@drawable/outline_account_circle_24"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Create your account"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+
+
+    <!-- Loading progress bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"/>
+
+    <!-- First Name input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFirstName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="@string/first_name"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Last Name input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:hint="@string/last_name"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Username input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUsername"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:hint="@string/username"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        app:endIconMode="password_toggle"
+        android:hint="@string/password"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Signup button -->
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_gradient_button"
+        android:text="@string/signup"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <FrameLayout
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal">
+
+            <!-- Login link -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_selector"
+                android:text="@string/already_have_account"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvGoToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="4dp"
+                android:textColor="#6300FA"
+                android:background="@drawable/bg_selector"
+                android:text="@string/login"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

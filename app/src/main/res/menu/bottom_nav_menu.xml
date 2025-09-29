@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 bottom_nav_menu.xml
+
+This menu file is used for the BottomNavigationView.
+Each item allows navigation between fragments in the BottomNavigation bar.
+
+Items:
+1. Faculties → navigates to the faculty list fragment.
+2. Students → navigates to the student list fragment.
+3. Profile → navigates to the user profile fragment.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 🔹 Faculties fragment -->
+    <item
+        android:id="@+id/facultyFragment"
+        android:icon="@drawable/outline_add_box_24"
+        android:title="Facultes"/>
+
+    <!-- 🔹 Students fragment -->
+    <item
+        android:id="@+id/studentFragmet"
+        android:icon="@drawable/outline_groups_24"
+        android:title="Students"/>
+
+    <!-- 🔹 Profile fragment -->
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/outline_account_circle_24"
+        android:title="Profile"/>
+</menu>

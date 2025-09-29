@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 fragment_faculty.xml
+
+This layout file defines the "Faculty List" screen.
+Each UI element is fully connected with the fragment’s functionality:
+- SearchView → search faculties
+- RecyclerView → display the list of faculties
+- FloatingActionButton → add a new faculty
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 🔹 Material Design search bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/outline_search_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search facultes..."
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 RecyclerView to display the list of faculties -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFaculty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- 🔹 FloatingActionButton for adding a new faculty -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddFaculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Faculty"
+        android:background="@color/white"
+        app:backgroundTint="@color/primaryColor"
+        app:tint="@color/white"
+        android:src="@drawable/outline_add_2_24" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

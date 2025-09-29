@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 fragment_progress.xml
+
+This layout file represents the "Progress" (loading) screen.
+It is used to indicate that user data or content is currently loading.
+
+Elements:
+1. FrameLayout → a container centered across the screen.
+2. ProgressBar → a spinning indicator displayed at the center to show loading state.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity = "center">
+
+    <!-- 🔹 Centered loading indicator -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+🔹 fragment_student.xml
+
+This layout file represents the "Students List" screen.
+UI elements allow displaying and searching the list of students.
+
+Elements:
+1. LinearLayout → main vertical container.
+2. SearchView → for searching students.
+3. RecyclerView → displays the list of students.
+4. FloatingActionButton → button to add a new student.
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 🔹 Search area for students -->
+    <!-- 🔹 Material Design search bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="2dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerTextField"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/outline_search_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search students..."
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 List of students -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_student"/>
+
+    <!-- 🔹 FloatingActionButton to add a new student -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddFaculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Add New Student"
+        android:src="@drawable/outline_add_2_24"
+        android:background="@color/white"
+        android:backgroundTint="@color/primaryColor"
+        app:tint = "@color/white"/>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

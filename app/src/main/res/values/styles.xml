@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- AppTheme -->
+    <style name="Theme.MyApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- General colors, fonts, and theme settings go here -->
+    </style>
+
+    <!-- Custom style for TextInputLayout with rounded corners -->
+    <style name="RoundedCornerTextField" parent="">
+        <!-- Set the corner shape to rounded -->
+        <item name="cornerFamily">rounded</item>
+        <!-- Define how rounded the corners should be -->
+        <item name="cornerSize">25dp</item> <!-- The larger the value, the more rounded the corners -->
+    </style>
+
+</resources>
